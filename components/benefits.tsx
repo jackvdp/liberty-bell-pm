@@ -1,7 +1,9 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Calculator, Shield, Users, Heart, FileText, Building, CheckCircle } from 'lucide-react'
+import { Calculator, Shield, Users, Heart, FileText, Building, CheckCircle, ArrowRight } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 
 const benefits = [
     {
@@ -95,13 +97,19 @@ export default function Benefits() {
                     transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
                     className="text-center mt-16 lg:mt-20"
                 >
-                    <p className="text-lg text-liberty-background/70 mb-2">
+                    <p className="text-xl lg:text-2xl font-reckless font-semibold !text-liberty-background mb-2">
                         Ready to experience the difference?
                     </p>
-                    <p className="text-xl lg:text-2xl font-reckless font-semibold !text-liberty-background">
+                    <p className="text-lg text-liberty-background/70 mb-8">
                         If you aren&apos;t blown away after one year,{' '}
-                        <span className="!text-liberty-accent">we&apos;ll find you another agent ourselves.</span>
+                        <span className="!text-liberty-accent font-medium">we&apos;ll find you another agent ourselves.</span>
                     </p>
+                    <Button size="xl" asChild className="bg-liberty-primary hover:bg-liberty-primary/90 text-liberty-text-on-dark">
+                        <Link href="/contact" className="flex items-center gap-3 group">
+                            Get in Touch
+                            <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                        </Link>
+                    </Button>
                 </motion.div>
             </div>
         </section>
