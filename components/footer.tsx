@@ -4,7 +4,6 @@ import { Mail } from 'lucide-react'
 
 export default function Footer() {
   const services = [
-    { title: "Property Management", href: "/services/property-management" },
     { title: "Service Charge & Budgeting", href: "/services/service-charge-budgeting" },
     { title: "Building Management", href: "/services/building-management" },
     { title: "Building Insurance", href: "/services/building-insurance" },

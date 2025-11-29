@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
 import { usePathname } from 'next/navigation'
-import { ArrowRight, Building, Home, Menu, Flame, Scale } from 'lucide-react'
+import { ArrowRight, Building, Home, Menu, Calculator, Shield, Users, Heart, FileText } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import {
   Sheet,
@@ -50,6 +50,15 @@ export default function Navbar() {
     return `${baseClasses} text-liberty-background/70 hover:text-liberty-primary hover:bg-liberty-secondary/10`
   }
 
+  const services = [
+    { title: "Service Charge & Budgeting", href: "/services/service-charge-budgeting", icon: Calculator, description: "Transparent budgeting expertise" },
+    { title: "Building Management", href: "/services/building-management", icon: Building, description: "Complete building solutions" },
+    { title: "Building Insurance", href: "/services/building-insurance", icon: Shield, description: "No hidden commissions" },
+    { title: "Onsite Staff Management", href: "/services/onsite-staff-management", icon: Users, description: "Performance-driven staff" },
+    { title: "Community Management", href: "/services/community-management", icon: Heart, description: "Building communities" },
+    { title: "RMC/RTM Company Secretariat", href: "/services/rmc-rtm-secretariat", icon: FileText, description: "Company administration" },
+  ]
+
   return (
     <nav className="bg-liberty-base/95 backdrop-blur-sm border-b border-liberty-secondary/30 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -87,23 +96,24 @@ export default function Navbar() {
                 {/* Services Dropdown */}
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className={
-                    isActive('/services') || isActive('/property-management') || isActive('/right-to-manage') || isActive('/heat-networks')
+                    isActive('/services')
                       ? "text-liberty-accent bg-liberty-accent/10 hover:bg-liberty-accent/20"
                       : "text-liberty-background/70 hover:text-liberty-primary bg-transparent hover:bg-liberty-secondary/20"
                   }>
                     Services
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="grid gap-3 p-6 w-80 bg-liberty-base border border-liberty-secondary/30 rounded-lg shadow-lg">
-                      <ListItem href="/services/property-management" title="Property Management" icon={<Building className="w-4 h-4" />}>
-                        Complete building management solutions
-                      </ListItem>
-                      <ListItem href="/services/right-to-manage" title="Right to Manage" icon={<Scale className="w-4 h-4" />}>
-                        Take control of your building
-                      </ListItem>
-                      <ListItem href="/services/heat-networks" title="Heat Networks" icon={<Flame className="w-4 h-4" />}>
-                        Heat network management services
-                      </ListItem>
+                    <div className="grid gap-3 p-6 w-96 bg-liberty-base border border-liberty-secondary/30 rounded-lg shadow-lg">
+                      {services.map((service) => (
+                        <ListItem 
+                          key={service.href}
+                          href={service.href} 
+                          title={service.title} 
+                          icon={<service.icon className="w-4 h-4" />}
+                        >
+                          {service.description}
+                        </ListItem>
+                      ))}
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
@@ -203,47 +213,22 @@ export default function Navbar() {
                   <div className="space-y-4">
                     <h3 className="font-reckless font-semibold text-liberty-background text-lg border-b border-liberty-secondary/30 pb-2">Services</h3>
                     <div className="space-y-1">
-                      <Link 
-                        href="/services/property-management" 
-                        className={`${getMobileLinkClasses('/services/property-management')} group`}
-                        onClick={() => setIsOpen(false)}
-                      >
-                        <div className="w-8 h-8 bg-liberty-primary/10 rounded-lg flex items-center justify-center group-hover:bg-liberty-primary/20 transition-colors">
-                          <Building className="w-4 h-4 text-liberty-primary" />
-                        </div>
-                        <div>
-                          <div className="font-medium">Property Management</div>
-                          <div className="text-sm text-liberty-background/50">Complete building solutions</div>
-                        </div>
-                      </Link>
-                      
-                      <Link 
-                        href="/services/right-to-manage" 
-                        className={`${getMobileLinkClasses('/services/right-to-manage')} group`}
-                        onClick={() => setIsOpen(false)}
-                      >
-                        <div className="w-8 h-8 bg-liberty-primary/10 rounded-lg flex items-center justify-center group-hover:bg-liberty-primary/20 transition-colors">
-                          <Scale className="w-4 h-4 text-liberty-primary" />
-                        </div>
-                        <div>
-                          <div className="font-medium">Right to Manage</div>
-                          <div className="text-sm text-liberty-background/50">Take control of your building</div>
-                        </div>
-                      </Link>
-
-                      <Link 
-                        href="/services/heat-networks" 
-                        className={`${getMobileLinkClasses('/services/heat-networks')} group`}
-                        onClick={() => setIsOpen(false)}
-                      >
-                        <div className="w-8 h-8 bg-liberty-primary/10 rounded-lg flex items-center justify-center group-hover:bg-liberty-primary/20 transition-colors">
-                          <Flame className="w-4 h-4 text-liberty-primary" />
-                        </div>
-                        <div>
-                          <div className="font-medium">Heat Networks</div>
-                          <div className="text-sm text-liberty-background/50">Heat network management</div>
-                        </div>
-                      </Link>
+                      {services.map((service) => (
+                        <Link 
+                          key={service.href}
+                          href={service.href} 
+                          className={`${getMobileLinkClasses(service.href)} group`}
+                          onClick={() => setIsOpen(false)}
+                        >
+                          <div className="w-8 h-8 bg-liberty-primary/10 rounded-lg flex items-center justify-center group-hover:bg-liberty-primary/20 transition-colors">
+                            <service.icon className="w-4 h-4 text-liberty-primary" />
+                          </div>
+                          <div>
+                            <div className="font-medium">{service.title}</div>
+                            <div className="text-sm text-liberty-background/50">{service.description}</div>
+                          </div>
+                        </Link>
+                      ))}
                     </div>
                   </div>
                 </div>
