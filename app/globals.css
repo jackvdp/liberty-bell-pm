@@ -13,6 +13,7 @@
   --color-liberty-surface-muted: var(--liberty-surface-muted);
   --color-liberty-text-on-dark: var(--liberty-text-on-dark);
   --color-liberty-text-on-light: var(--liberty-text-on-light);
+  --color-liberty-text-on-accent: var(--liberty-text-on-accent);
   
   --font-family-inter: 'Inter', sans-serif;
   --font-family-reckless: 'Reckless', serif;
@@ -80,6 +81,7 @@
   --liberty-background: #11151c;        /* Text on light backgrounds */
   --liberty-text-on-dark: #ffffff;      /* Text on dark backgrounds */
   --liberty-text-on-light: #11151c;     /* Text on light backgrounds */
+  --liberty-text-on-accent: #11151c;    /* Text on accent backgrounds (always dark) */
   
   /* shadcn variables */
   --background: #ffffff;
@@ -128,6 +130,7 @@
   --liberty-background: #f1f5f9;        /* Text on light (now dark) backgrounds */
   --liberty-text-on-dark: #ffffff;      /* Text on dark backgrounds (unchanged) */
   --liberty-text-on-light: #f1f5f9;     /* Text on light backgrounds */
+  --liberty-text-on-accent: #11151c;    /* Text on accent backgrounds (always dark) */
   
   /* shadcn variables */
   --background: #0d1117;

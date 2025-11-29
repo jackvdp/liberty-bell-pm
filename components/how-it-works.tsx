@@ -97,7 +97,7 @@ export default function HowItWorks() {
                     transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
                     className="text-center mt-16 lg:mt-20"
                 >
-                    <Button size="xl" asChild className="bg-liberty-accent hover:bg-liberty-accent/90 text-liberty-background">
+                    <Button size="xl" asChild className="bg-liberty-accent hover:bg-liberty-accent/90 text-liberty-text-on-accent">
                         <Link href="/services" className="flex items-center gap-3 group">
                             Explore Our Services
                             <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />

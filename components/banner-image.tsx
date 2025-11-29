@@ -54,7 +54,7 @@ export default function BannerImage() {
                     <p className="text-lg lg:text-xl !text-white/90 mb-8 max-w-2xl mx-auto" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.3)' }}>
                         Join the growing number of leaseholders who&apos;ve switched to transparent, fair property management.
                     </p>
-                    <Button size="xl" asChild className="bg-liberty-accent hover:bg-liberty-accent/90 text-liberty-background">
+                    <Button size="xl" asChild className="bg-liberty-accent hover:bg-liberty-accent/90 text-liberty-text-on-accent">
                         <Link href="/contact" className="flex items-center gap-3 group">
                             Get Your Free Consultation
                             <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
