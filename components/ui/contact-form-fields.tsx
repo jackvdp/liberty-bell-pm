@@ -95,7 +95,7 @@ export default function ContactFormFields({
 
   const buttonClasses = buttonVariant === 'primary'
     ? "bg-liberty-primary hover:bg-liberty-primary/90 text-liberty-secondary"
-    : "bg-liberty-accent hover:bg-liberty-accent/90 text-liberty-background"
+    : "bg-liberty-accent hover:bg-liberty-accent/90 text-liberty-text-on-accent"
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">

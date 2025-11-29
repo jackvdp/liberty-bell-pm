@@ -6,6 +6,7 @@ import Testimonials from "@/components/testimonials";
 import BannerImage from "@/components/banner-image";
 import FAQSection from "@/components/faq-section";
 import Footer from "@/components/footer";
+import ContactForm from "@/components/contact-form";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <Testimonials />
         <BannerImage />
         <FAQSection />
+        <ContactForm/>
         <Footer />
       </div>
   );
