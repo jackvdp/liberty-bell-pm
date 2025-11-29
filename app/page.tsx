@@ -3,6 +3,7 @@ import Navbar from "@/components/navbar";
 import Benefits from "@/components/benefits";
 import HowItWorks from "@/components/how-it-works";
 import Testimonials from "@/components/testimonials";
+import BannerImage from "@/components/banner-image";
 import FAQSection from "@/components/faq-section";
 import Footer from "@/components/footer";
 
@@ -14,6 +15,7 @@ export default function Home() {
         <Benefits />
         <HowItWorks />
         <Testimonials />
+        <BannerImage />
         <FAQSection />
         <Footer />
       </div>
