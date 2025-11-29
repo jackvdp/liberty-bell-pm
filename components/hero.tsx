@@ -49,13 +49,13 @@ export default function Hero() {
                             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
                             className="flex flex-col sm:flex-row gap-4"
                         >
-                            <Button size="xl" asChild className="bg-liberty-primary hover:bg-liberty-primary/90 text-liberty-base">
+                            <Button size="xl" asChild className="bg-liberty-primary hover:bg-liberty-primary/90 text-liberty-text-on-dark">
                                 <Link href="/contact" className="flex items-center gap-3 group">
                                     Get in Touch
                                     <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                                 </Link>
                             </Button>
-                            <Button size="xl" variant="outline" asChild className="border-liberty-primary text-liberty-primary hover:bg-liberty-primary hover:text-liberty-base">
+                            <Button size="xl" variant="outline" asChild className="border-liberty-primary text-liberty-primary hover:bg-liberty-primary hover:text-liberty-text-on-dark">
                                 <Link href="/services">
                                     Our Services
                                 </Link>

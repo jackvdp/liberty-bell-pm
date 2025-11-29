@@ -24,7 +24,7 @@ export default function Footer() {
   ]
 
   return (
-      <footer className="bg-liberty-background text-liberty-base">
+      <footer className="bg-liberty-surface-dark text-liberty-text-on-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Main Footer Content */}
           <div className="py-16 sm:py-20">
@@ -61,7 +61,7 @@ export default function Footer() {
 
               {/* Services */}
               <div>
-                <h3 className="text-lg font-reckless font-bold !text-liberty-base mb-4">
+                <h3 className="text-lg font-reckless font-bold !text-liberty-text-on-dark mb-4">
                   Services
                 </h3>
                 <ul className="space-y-3">
@@ -77,7 +77,7 @@ export default function Footer() {
 
               {/* Company */}
               <div>
-                <h3 className="text-lg font-reckless font-bold !text-liberty-base mb-4">
+                <h3 className="text-lg font-reckless font-bold !text-liberty-text-on-dark mb-4">
                   Company
                 </h3>
                 <ul className="space-y-3">

@@ -3,12 +3,15 @@
 
 /* Custom Colors and Fonts for Tailwind v4 */
 @theme {
-  --color-liberty-primary: #456e9b;
-  --color-liberty-secondary: #dde4ed;
-  --color-liberty-accent: #5ad2c7;
-  --color-liberty-standard: #11151c;
-  --color-liberty-background: #11151c;
-  --color-liberty-base: #ffffff;
+  --color-liberty-primary: var(--liberty-primary);
+  --color-liberty-secondary: var(--liberty-secondary);
+  --color-liberty-accent: var(--liberty-accent);
+  --color-liberty-standard: var(--liberty-standard);
+  --color-liberty-background: var(--liberty-background);
+  --color-liberty-base: var(--liberty-base);
+  --color-liberty-surface-dark: var(--liberty-surface-dark);
+  --color-liberty-text-on-dark: var(--liberty-text-on-dark);
+  --color-liberty-text-on-light: var(--liberty-text-on-light);
   
   --font-family-inter: 'Inter', sans-serif;
   --font-family-reckless: 'Reckless', serif;
@@ -59,14 +62,108 @@
   font-display: swap;
 }
 
+/* Light mode (default) */
+:root {
+  /* Brand colors */
+  --liberty-primary: #456e9b;
+  --liberty-secondary: #dde4ed;
+  --liberty-accent: #5ad2c7;
+  --liberty-standard: #11151c;
+  
+  /* Semantic surface colors */
+  --liberty-base: #ffffff;              /* Light surface (page background, cards) */
+  --liberty-surface-dark: #11151c;      /* Dark surface (footer, dark sections) */
+  
+  /* Semantic text colors */
+  --liberty-background: #11151c;        /* Text on light backgrounds */
+  --liberty-text-on-dark: #ffffff;      /* Text on dark backgrounds */
+  --liberty-text-on-light: #11151c;     /* Text on light backgrounds */
+  
+  /* shadcn variables */
+  --background: #ffffff;
+  --foreground: #11151c;
+  
+  --card: #ffffff;
+  --card-foreground: #11151c;
+  
+  --popover: #ffffff;
+  --popover-foreground: #11151c;
+  
+  --primary: #456e9b;
+  --primary-foreground: #ffffff;
+  
+  --secondary: #dde4ed;
+  --secondary-foreground: #11151c;
+  
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  
+  --accent: #5ad2c7;
+  --accent-foreground: #11151c;
+  
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #456e9b;
+}
+
+/* Dark mode */
+.dark {
+  /* Brand colors - slightly adjusted for dark mode visibility */
+  --liberty-primary: #6b9fd4;
+  --liberty-secondary: #dde4ed;
+  --liberty-accent: #5ad2c7;
+  --liberty-standard: #f1f5f9;
+  
+  /* Semantic surface colors */
+  --liberty-base: #0d1117;              /* Light surface becomes dark in dark mode */
+  --liberty-surface-dark: #000000;      /* Dark surface becomes even darker */
+  
+  /* Semantic text colors */
+  --liberty-background: #f1f5f9;        /* Text on light (now dark) backgrounds */
+  --liberty-text-on-dark: #ffffff;      /* Text on dark backgrounds (unchanged) */
+  --liberty-text-on-light: #f1f5f9;     /* Text on light backgrounds */
+  
+  /* shadcn variables */
+  --background: #0d1117;
+  --foreground: #f1f5f9;
+  
+  --card: #161b22;
+  --card-foreground: #f1f5f9;
+  
+  --popover: #161b22;
+  --popover-foreground: #f1f5f9;
+  
+  --primary: #6b9fd4;
+  --primary-foreground: #0d1117;
+  
+  --secondary: #21262d;
+  --secondary-foreground: #f1f5f9;
+  
+  --muted: #21262d;
+  --muted-foreground: #8b949e;
+  
+  --accent: #5ad2c7;
+  --accent-foreground: #0d1117;
+  
+  --destructive: #f85149;
+  --destructive-foreground: #ffffff;
+  
+  --border: #30363d;
+  --input: #30363d;
+  --ring: #6b9fd4;
+}
+
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #ffffff;
-  color: #0f1115;
+  background-color: var(--background);
+  color: var(--foreground);
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Reckless', serif;
   font-weight: 400;
-  color: #0f1115;
+  color: var(--foreground);
 }

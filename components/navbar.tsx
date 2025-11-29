@@ -6,6 +6,7 @@ import { useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { ArrowRight, Building, Home, Menu, Calculator, Shield, Users, Heart, FileText } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { ThemeToggle } from '@/components/theme-toggle'
 import {
   Sheet,
   SheetContent,
@@ -136,9 +137,10 @@ export default function Navbar() {
 
           {/* Desktop CTA Button - Right side */}
           <div className="hidden lg:flex justify-end items-center gap-3">
+            <ThemeToggle />
             <Button 
               asChild 
-              className="bg-liberty-primary hover:bg-liberty-primary/90 text-liberty-base"
+              className="bg-liberty-primary hover:bg-liberty-primary/90 text-liberty-text-on-dark"
             >
               <Link href="/contact" className="flex items-center gap-2">
                 Get in Touch
@@ -237,7 +239,7 @@ export default function Navbar() {
                 <SheetFooter className="flex-shrink-0 px-2 pb-4 space-y-2">
                   <Button 
                     asChild 
-                    className="bg-liberty-primary hover:bg-liberty-primary/90 text-liberty-base w-full h-12"
+                    className="bg-liberty-primary hover:bg-liberty-primary/90 text-liberty-text-on-dark w-full h-12"
                   >
                     <Link 
                       href="/contact" 
