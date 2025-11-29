@@ -19,6 +19,9 @@ export default function Hero() {
     const textOpacity = useTransform(scrollYProgress, [0, 0.25], [1, 0])
     const textX = useTransform(scrollYProgress, [0, 0.3], [0, -200])
     
+    // Overlay text fades in as image is fully revealed
+    const overlayTextOpacity = useTransform(scrollYProgress, [0.25, 0.4], [0, 1])
+    
     // Diagonal clip path - starts with more white space, original angle
     // Bottom left point moves from 40% to -50% (off screen left)
     // Top point moves from 65% to -25% (off screen left)
@@ -39,7 +42,7 @@ export default function Hero() {
                             x: textX
                         }}
                     >
-                        <div className="w-full pr-4 pl-12 sm:pl-16 lg:pl-24 py-16">
+                        <div className="w-full pr-12 sm:pr-16 lg:pr-24 pl-12 sm:pl-16 lg:pl-24 pt-16 pb-24">
                             {/* Introducing Badge */}
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
@@ -122,6 +125,12 @@ export default function Hero() {
                                     className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-liberty-base/20"
                                     style={{ opacity: useTransform(scrollYProgress, [0, 0.4], [1, 0]) }}
                                 />
+                                
+                                {/* Dark overlay that fades in for text readability */}
+                                <motion.div 
+                                    className="absolute inset-0 bg-black/60"
+                                    style={{ opacity: overlayTextOpacity }}
+                                />
                             </motion.div>
                         </motion.div>
                     </div>
@@ -136,6 +145,24 @@ export default function Hero() {
                             priority
                         />
                     </div>
+                    
+                    {/* Centered overlay text - fades in and slides up as image is fully revealed */}
+                    <motion.div 
+                        className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none"
+                        style={{ 
+                            opacity: overlayTextOpacity,
+                            y: useTransform(scrollYProgress, [0.25, 0.4], [100, 0])
+                        }}
+                    >
+                        <div className="text-center px-8 max-w-4xl">
+                            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-reckless font-bold !text-white mb-6" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
+                                We&apos;ve Been Where You Are
+                            </h2>
+                            <p className="font-family-reckless text-xl lg:text-2xl xl:text-3xl !text-white/95 leading-relaxed max-w-3xl mx-auto" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
+                                After seven years of frustration with unscrupulous managing agents, we knew leaseholders deserved better. That&apos;s why we built Liberty Bell, a property management company that puts you in control.
+                            </p>
+                        </div>
+                    </motion.div>
                 </div>
             </section>
         </div>
