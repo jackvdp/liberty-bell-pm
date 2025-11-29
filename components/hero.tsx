@@ -19,9 +19,9 @@ export default function Hero() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, ease: "easeOut" }}
                         >
-                <span className="inline-flex items-center gap-2 bg-liberty-accent/10 text-liberty-accent px-4 py-2 rounded-full text-sm font-medium mb-6 border border-liberty-accent/20">
-                  <strong>INTRODUCING</strong>
-                </span>
+                            <span className="inline-flex items-center gap-2 bg-liberty-accent/10 text-liberty-accent px-4 py-2 rounded-full text-sm font-medium mb-6 border border-liberty-accent/20">
+                                <strong>LIBERTY BELL PROPERTY MANAGEMENT</strong>
+                            </span>
                         </motion.div>
 
                         <motion.h1
@@ -30,8 +30,8 @@ export default function Hero() {
                             transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
                             className="text-4xl lg:text-5xl xl:text-6xl font-reckless font-bold text-liberty-background mb-6 leading-tight"
                         >
-                            Liberty Bell{' '}
-                            <span className="text-liberty-accent">Property Management</span>
+                            Putting Leaseholders{' '}
+                            <span className="text-liberty-accent">First</span>
                         </motion.h1>
 
                         <motion.p
@@ -40,7 +40,7 @@ export default function Hero() {
                             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                             className="text-lg lg:text-xl text-liberty-background/70 mb-8 leading-relaxed"
                         >
-                            Putting leaseholders&apos; needs before profits
+                            Transparent service charges. Fair block management. Real value for money. We manage properties where leaseholders are in control.
                         </motion.p>
 
                         <motion.div
