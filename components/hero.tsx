@@ -159,7 +159,7 @@ export default function Hero() {
                     
                     {/* Centered overlay text - fades in and slides up as image is fully revealed */}
                     <motion.div 
-                        className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none"
+                        className="absolute inset-0 flex items-center justify-center z-20"
                         style={{ 
                             opacity: overlayTextOpacity,
                             y: useTransform(scrollYProgress, [0.25, 0.4], [100, 0])
@@ -169,9 +169,15 @@ export default function Hero() {
                             <h2 className="text-3xl lg:text-4xl xl:text-5xl font-reckless font-bold !text-white mb-6" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
                                 We&apos;ve Been Where You Are
                             </h2>
-                            <p className="font-family-reckless text-xl lg:text-2xl xl:text-3xl !text-white/95 leading-relaxed max-w-3xl mx-auto" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
+                            <p className="font-family-reckless text-xl lg:text-2xl xl:text-3xl !text-white/95 leading-relaxed max-w-3xl mx-auto mb-8" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
                                 After seven years of frustration with unscrupulous managing agents, we knew leaseholders deserved better. That&apos;s why we built Liberty Bell, a property management company that puts you in control.
                             </p>
+                            <Button size="xl" asChild className="bg-liberty-accent hover:bg-liberty-accent/90 text-liberty-text-on-accent pointer-events-auto">
+                                <Link href="/about" className="flex items-center gap-3 group">
+                                    Our Story
+                                    <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                                </Link>
+                            </Button>
                         </div>
                     </motion.div>
                 </div>
