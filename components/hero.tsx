@@ -36,7 +36,7 @@ export default function Hero() {
                 <div className="flex-1 flex relative">
                     {/* Left Content - Text */}
                     <motion.div 
-                        className="w-full lg:w-1/2 flex items-center relative z-10"
+                        className="w-full lg:w-1/2 flex items-center relative z-10 bg-liberty-base lg:bg-transparent"
                         style={{ 
                             opacity: textOpacity,
                             x: textX
@@ -135,16 +135,27 @@ export default function Hero() {
                         </motion.div>
                     </div>
                     
-                    {/* Mobile: Static image without scroll effects */}
-                    <div className="lg:hidden absolute inset-0 -z-10">
+                    {/* Mobile: Solid white background, no image behind text */}
+                    <div className="lg:hidden absolute inset-0 -z-10 bg-liberty-base" />
+                    
+                    {/* Mobile: Image section that appears on scroll */}
+                    <motion.div 
+                        className="lg:hidden absolute inset-0 -z-5"
+                        style={{ opacity: useTransform(scrollYProgress, [0.2, 0.4], [0, 1]) }}
+                    >
                         <Image
                             src="/images/london.png"
                             alt="London cityscape - Liberty Bell Property Management"
                             fill
-                            className="object-cover opacity-20"
+                            className="object-cover"
                             priority
                         />
-                    </div>
+                        {/* Dark overlay for text readability on mobile */}
+                        <motion.div 
+                            className="absolute inset-0 bg-black/50"
+                            style={{ opacity: useTransform(scrollYProgress, [0.3, 0.45], [0, 1]) }}
+                        />
+                    </motion.div>
                     
                     {/* Centered overlay text - fades in and slides up as image is fully revealed */}
                     <motion.div 
