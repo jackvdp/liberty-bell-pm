@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Star, Quote, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -41,6 +42,18 @@ export default function Testimonials() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="text-center mb-16 lg:mb-20"
                 >
+                    {/* Small photo of happy owners */}
+                    <div className="flex justify-center mb-6">
+                        <div className="relative w-24 h-24 lg:w-64 lg:h-64 rounded-full overflow-hidden border-2 border-liberty-primary/30">
+                            <Image
+                                src="/images/owners.png"
+                                alt="Happy homeowners"
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
+                    </div>
+                    
                     <span className="inline-flex items-center gap-2 bg-liberty-accent/10 text-liberty-accent px-4 py-2 rounded-full text-sm font-medium mb-6 border border-liberty-accent/20">
                         <strong>TESTIMONIALS</strong>
                     </span>
