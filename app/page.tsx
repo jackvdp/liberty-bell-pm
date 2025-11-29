@@ -1,5 +1,6 @@
 import Hero from "@/components/hero";
 import Navbar from "@/components/navbar";
+import Benefits from "@/components/benefits";
 import Footer from "@/components/footer";
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
       <div className="min-h-screen bg-liberty-base">
         <Navbar />
         <Hero />
+        <Benefits />
         <Footer />
       </div>
   );
