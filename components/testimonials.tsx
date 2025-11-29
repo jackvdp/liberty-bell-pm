@@ -61,7 +61,7 @@ export default function Testimonials() {
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
                         >
-                            <div className="h-full p-8 rounded-2xl bg-liberty-secondary/10 border border-liberty-secondary/30 flex flex-col">
+                            <div className="h-full p-8 rounded-2xl bg-liberty-secondary/10 border border-liberty-secondary/30 flex flex-col hover:border-liberty-accent/30 hover:bg-liberty-accent/5  hover:-translate-y-1 transition-all duration-300">
                                 {/* Quote icon */}
                                 <Quote className="w-10 h-10 text-liberty-primary/50 mb-4" />
                                 
