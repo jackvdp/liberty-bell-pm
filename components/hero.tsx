@@ -42,7 +42,7 @@ export default function Hero() {
                             x: textX
                         }}
                     >
-                        <div className="w-full pr-12 sm:pr-16 lg:pr-24 pl-12 sm:pl-16 lg:pl-24 pt-16 pb-24">
+                        <div className="w-full pr-12 sm:pr-16 lg:pr-24 pl-12 sm:pl-16 lg:pl-32 pt-16 pb-24">
                             {/* Introducing Badge */}
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
