@@ -19,12 +19,12 @@ export default function Hero() {
     const textOpacity = useTransform(scrollYProgress, [0, 0.25], [1, 0])
     const textX = useTransform(scrollYProgress, [0, 0.3], [0, -200])
     
-    // Diagonal clip path - starts further right, then slides left
-    // Bottom left point moves from 50% to -50% (off screen left)
-    // Top point moves from 70% to -30% (off screen left)
-    // This keeps the diagonal angle while sliding the whole thing left
-    const clipBottomLeft = useTransform(scrollYProgress, [0, 0.5], [50, -50])
-    const clipTopLeft = useTransform(scrollYProgress, [0, 0.5], [70, -30])
+    // Diagonal clip path - starts with more white space, original angle
+    // Bottom left point moves from 40% to -50% (off screen left)
+    // Top point moves from 65% to -25% (off screen left)
+    // This keeps the original diagonal angle while sliding left
+    const clipBottomLeft = useTransform(scrollYProgress, [0, 0.5], [40, -50])
+    const clipTopLeft = useTransform(scrollYProgress, [0, 0.5], [65, -25])
     
     return (
         <div ref={containerRef} className="relative h-[200vh]">
