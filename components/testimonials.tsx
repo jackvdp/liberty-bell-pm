@@ -1,7 +1,9 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Star, Quote } from 'lucide-react'
+import { Star, Quote, ArrowRight } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 
 const testimonials = [
     {
@@ -61,7 +63,7 @@ export default function Testimonials() {
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
                         >
-                            <div className="h-full p-8 rounded-2xl bg-liberty-secondary/10 border border-liberty-secondary/30 flex flex-col hover:border-liberty-accent/30 hover:bg-liberty-accent/5  hover:-translate-y-1 transition-all duration-300">
+                            <div className="h-full p-8 rounded-2xl bg-liberty-secondary/10 border border-liberty-secondary/30 flex flex-col hover:border-liberty-accent/30 hover:bg-liberty-accent/5 hover:-translate-y-1 transition-all duration-300">
                                 {/* Quote icon */}
                                 <Quote className="w-10 h-10 text-liberty-primary/50 mb-4" />
                                 
@@ -87,6 +89,22 @@ export default function Testimonials() {
                         </motion.div>
                     ))}
                 </div>
+
+                {/* CTA Button */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+                    className="text-center mt-16 lg:mt-20"
+                >
+                    <Button size="xl" asChild className="bg-liberty-primary hover:bg-liberty-primary/90 text-liberty-text-on-dark">
+                        <Link href="/about" className="flex items-center gap-3 group">
+                            Learn More About Us
+                            <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                        </Link>
+                    </Button>
+                </motion.div>
             </div>
         </section>
     )

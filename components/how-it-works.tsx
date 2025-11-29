@@ -1,7 +1,9 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Phone, ClipboardCheck, Handshake } from 'lucide-react'
+import { Phone, ClipboardCheck, Handshake, ArrowRight } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 
 const steps = [
     {
@@ -86,6 +88,22 @@ export default function HowItWorks() {
                         </motion.div>
                     ))}
                 </div>
+
+                {/* CTA Button */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+                    className="text-center mt-16 lg:mt-20"
+                >
+                    <Button size="xl" asChild className="bg-liberty-accent hover:bg-liberty-accent/90 text-liberty-background">
+                        <Link href="/services" className="flex items-center gap-3 group">
+                            Explore Our Services
+                            <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                        </Link>
+                    </Button>
+                </motion.div>
             </div>
         </section>
     )

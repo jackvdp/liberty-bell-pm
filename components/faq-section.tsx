@@ -127,7 +127,7 @@ export default function FAQSection() {
   const activeColor = faqCategories.find(cat => cat.id === activeCategory)
 
   return (
-    <section className="py-16 sm:py-24 lg:py-32 bg-liberty-secondary/20">
+    <section className="py-16 sm:py-24 lg:py-32 bg-liberty-surface-muted">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div

@@ -10,6 +10,7 @@
   --color-liberty-background: var(--liberty-background);
   --color-liberty-base: var(--liberty-base);
   --color-liberty-surface-dark: var(--liberty-surface-dark);
+  --color-liberty-surface-muted: var(--liberty-surface-muted);
   --color-liberty-text-on-dark: var(--liberty-text-on-dark);
   --color-liberty-text-on-light: var(--liberty-text-on-light);
   
@@ -73,6 +74,7 @@
   /* Semantic surface colors */
   --liberty-base: #ffffff;              /* Light surface (page background, cards) */
   --liberty-surface-dark: #11151c;      /* Dark surface (footer, dark sections) */
+  --liberty-surface-muted: rgba(221, 228, 237, 0.2);     /* Muted surface for alternate sections */
   
   /* Semantic text colors */
   --liberty-background: #11151c;        /* Text on light backgrounds */
@@ -120,6 +122,7 @@
   /* Semantic surface colors */
   --liberty-base: #0d1117;              /* Light surface becomes dark in dark mode */
   --liberty-surface-dark: #000000;      /* Dark surface becomes even darker */
+  --liberty-surface-muted: #161b22;     /* Muted surface for alternate sections */
   
   /* Semantic text colors */
   --liberty-background: #f1f5f9;        /* Text on light (now dark) backgrounds */
