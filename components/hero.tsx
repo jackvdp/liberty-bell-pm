@@ -39,12 +39,13 @@ export default function Hero() {
                             x: textX
                         }}
                     >
-                        <div className="w-full max-w-xl ml-auto pr-4 pl-8 sm:pl-12 lg:pl-16 py-16">
+                        <div className="w-full pr-4 pl-12 sm:pl-16 lg:pl-24 py-16">
                             {/* Introducing Badge */}
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, ease: "easeOut" }}
+                                className={"max-w-lg"}
                             >
                                 <span className="inline-flex items-center gap-2 bg-liberty-accent/10 text-liberty-accent px-4 py-2 rounded-full text-sm font-medium mb-6 border border-liberty-accent/20">
                                     <strong>LIBERTY BELL PROPERTY MANAGEMENT</strong>
@@ -57,8 +58,8 @@ export default function Hero() {
                                 transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
                                 className="text-4xl lg:text-5xl xl:text-6xl font-reckless font-bold text-liberty-background mb-6 leading-tight"
                             >
-                                Putting Leaseholders{' '}
-                                <span className="text-liberty-accent">First</span>
+                                Property Management<br/>
+                                <span className="text-liberty-accent">For Leaseholders</span>
                             </motion.h1>
 
                             <motion.p
