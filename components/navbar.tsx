@@ -31,8 +31,7 @@ export default function Navbar() {
 
   const isActive = (path: string) => {
     if (path === '/' && pathname === '/') return true
-    if (path !== '/' && pathname.startsWith(path)) return true
-    return false
+    return path !== '/' && pathname.startsWith(path);
   }
 
   const getLinkClasses = (path: string) => {
@@ -101,7 +100,9 @@ export default function Navbar() {
                       ? "text-liberty-accent bg-liberty-accent/10 hover:bg-liberty-accent/20"
                       : "text-liberty-background/70 hover:text-liberty-primary bg-transparent hover:bg-liberty-secondary/20"
                   }>
-                    Services
+                    <Link href="/services">
+                      Services
+                    </Link>
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="grid gap-3 p-6 w-96 bg-liberty-base border border-liberty-secondary/30 rounded-lg shadow-lg">
