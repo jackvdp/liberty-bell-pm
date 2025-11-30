@@ -186,12 +186,28 @@ export default function Hero() {
                             <p className="font-family-reckless text-xl lg:text-2xl xl:text-3xl !text-white/95 leading-relaxed max-w-3xl mx-auto mb-8" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
                                 After seven years of frustration with unscrupulous managing agents, we knew leaseholders deserved better. That&apos;s why we built Liberty Bell, a property management company that puts you in control.
                             </p>
-                            <Button size="xl" asChild className="bg-liberty-accent hover:bg-liberty-accent/90 text-liberty-text-on-accent">
-                                <Link href="/about" className="flex items-center gap-3 group">
-                                    Our Story
-                                    <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-                                </Link>
-                            </Button>
+                            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+                                <Button size="xl" asChild className="bg-liberty-accent hover:bg-liberty-accent/90 text-liberty-text-on-accent">
+                                    <Link href="/about" className="flex items-center gap-3 group">
+                                        Our Story
+                                        <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                                    </Link>
+                                </Button>
+                                <Button size="xl" variant="outline" asChild className="border-white/80 text-white hover:bg-white hover:text-liberty-background">
+                                    <a 
+                                        href="https://www.libertybellenfranchise.co.uk/" 
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-3 group"
+                                    >
+                                        Right to Manage
+                                        <ExternalLink size={18} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                                    </a>
+                                </Button>
+                            </div>
+                            <p className="text-sm text-white/70" style={{ textShadow: '0 1px 4px rgba(0,0,0,0.5)' }}>
+                                Not yet in control? Our sister company helps leaseholders gain Right to Manage.
+                            </p>
                         </div>
                     </motion.div>
                 </div>
