@@ -94,11 +94,14 @@ export const ModalTrigger = ({
 export const ModalBody = ({
   children,
   className,
+  onClose,
 }: {
   children: ReactNode;
   className?: string;
+  onClose?: () => void;
 }) => {
-  const { open } = useModal();
+  const { open, setOpen } = useModal();
+  const prevOpen = useRef(open);
 
   useEffect(() => {
     if (open) {
@@ -106,10 +109,15 @@ export const ModalBody = ({
     } else {
       document.body.style.overflow = "auto";
     }
-  }, [open]);
+    
+    // Call onClose when modal closes
+    if (prevOpen.current && !open && onClose) {
+      onClose();
+    }
+    prevOpen.current = open;
+  }, [open, onClose]);
 
   const modalRef = useRef<HTMLDivElement>(null);
-  const { setOpen } = useModal();
   useOnClickOutside(modalRef as React.RefObject<HTMLElement>, () => setOpen(false));
 
   return (

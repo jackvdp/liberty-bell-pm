@@ -1,6 +1,7 @@
 'use client'
 
-import { useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
+import { useSearchParams, useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
 import {
   Calculator,
@@ -132,19 +133,18 @@ const services: Service[] = [
   },
 ]
 
-function ServiceCard({ service }: { service: Service }) {
+function ServiceCard({ service, autoOpen = false }: { service: Service; autoOpen?: boolean }) {
   const IconComponent = service.icon
+  const router = useRouter()
+
+  const handleModalClose = () => {
+    router.replace('/services', { scroll: false })
+  }
 
   return (
     <Modal>
-      <ModalTrigger className="w-full h-full p-0 bg-transparent">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="bg-liberty-base border border-liberty-secondary/30 rounded-xl p-6 h-full flex flex-col items-center text-center cursor-pointer group hover:border-liberty-primary/50 hover:shadow-lg transition-all duration-300"
-        >
+      <ModalTrigger className="w-full h-full p-0 bg-transparent" autoTrigger={autoOpen}>
+        <div className="bg-liberty-base border border-liberty-secondary/30 rounded-xl p-6 h-full flex flex-col items-center text-center cursor-pointer group hover:border-liberty-primary/50 hover:shadow-lg transition-all duration-300">
           <div className="w-16 h-16 bg-liberty-primary/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-liberty-primary/20 transition-colors duration-300">
             <IconComponent className="w-8 h-8 text-liberty-primary" />
           </div>
@@ -158,9 +158,9 @@ function ServiceCard({ service }: { service: Service }) {
             Learn more
             <ArrowRight className="w-4 h-4" />
           </span>
-        </motion.div>
+        </div>
       </ModalTrigger>
-      <ModalBody className="max-w-3xl">
+      <ModalBody className="max-w-3xl" onClose={handleModalClose}>
         <ModalContent className="overflow-y-auto max-h-[70vh]">
           <div className="flex items-center gap-4 mb-6">
             <div className="w-14 h-14 bg-liberty-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
@@ -207,6 +207,39 @@ function ServiceCard({ service }: { service: Service }) {
   )
 }
 
+function ServicesGrid() {
+  const searchParams = useSearchParams()
+  const serviceParam = searchParams.get('service')
+  const [openServiceId, setOpenServiceId] = useState<string | null>(null)
+
+  useEffect(() => {
+    if (serviceParam) {
+      const timer = setTimeout(() => {
+        setOpenServiceId(serviceParam)
+      }, 500)
+      return () => clearTimeout(timer)
+    }
+  }, [serviceParam])
+
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {services.map((service, index) => (
+        <motion.div
+          key={service.id}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+        >
+          <ServiceCard 
+            service={service} 
+            autoOpen={openServiceId === service.id}
+          />
+        </motion.div>
+      ))}
+    </div>
+  )
+}
+
 export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-liberty-base">
@@ -237,18 +270,15 @@ export default function ServicesPage() {
           </motion.div>
 
           {/* Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, index) => (
-              <motion.div
-                key={service.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <ServiceCard service={service} />
-              </motion.div>
-            ))}
-          </div>
+          <Suspense fallback={
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[...Array(6)].map((_, i) => (
+                <div key={i} className="bg-liberty-secondary/10 rounded-xl p-6 h-48 animate-pulse" />
+              ))}
+            </div>
+          }>
+            <ServicesGrid />
+          </Suspense>
         </div>
       </section>
 
@@ -262,7 +292,7 @@ export default function ServicesPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="font-reckless text-3xl lg:text-4xl font-semibold text-liberty-background mb-4">
-              Ready to Take Control?
+              Ready to <span className="text-liberty-accent">Take Control?</span>
             </h2>
             <p className="text-liberty-background/70 text-lg mb-8 max-w-2xl mx-auto">
               Are you tired of dealing with unscrupulous managing agents or being bullied

@@ -52,12 +52,12 @@ export default function Navbar() {
   }
 
   const services = [
-    { title: "Service Charge & Budgeting", href: "/services/service-charge-budgeting", icon: Calculator, description: "Transparent budgeting expertise" },
-    { title: "Building Management", href: "/services/building-management", icon: Building, description: "Complete building solutions" },
-    { title: "Building Insurance", href: "/services/building-insurance", icon: Shield, description: "No hidden commissions" },
-    { title: "Onsite Staff Management", href: "/services/onsite-staff-management", icon: Users, description: "Performance-driven staff" },
-    { title: "Community Management", href: "/services/community-management", icon: Heart, description: "Building communities" },
-    { title: "RMC/RTM Company Secretariat", href: "/services/rmc-rtm-secretariat", icon: FileText, description: "Company administration" },
+    { title: "Service Charge & Budgeting", href: "/services?service=service-charge", icon: Calculator, description: "Transparent budgeting expertise" },
+    { title: "Building Management", href: "/services?service=building-management", icon: Building, description: "Complete building solutions" },
+    { title: "Building Insurance", href: "/services?service=building-insurance", icon: Shield, description: "No hidden commissions" },
+    { title: "Onsite Staff Management", href: "/services?service=onsite-staff", icon: Users, description: "Performance-driven staff" },
+    { title: "Community Management", href: "/services?service=community-management", icon: Heart, description: "Building communities" },
+    { title: "RMC/RTM Company Secretariat", href: "/services?service=rmc-rtm", icon: FileText, description: "Company administration" },
   ]
 
   return (
