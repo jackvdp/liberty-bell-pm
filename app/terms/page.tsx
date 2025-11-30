@@ -28,10 +28,10 @@ const sections = [
     icon: FileText,
     title: '1. Definitions & Interpretation',
     content: `
-      <p><strong>"We", "Us", "Our"</strong> means Liberty Bell Ethical Enfranchisement Ltd, a company registered in England and Wales (Company Number: 16430826).</p>
-      <p><strong>"You", "Your"</strong> means the individual or group of leaseholders entering into a contract with us.</p>
-      <p><strong>"RTM"</strong> refers to the Right to Manage under the Commonhold and Leasehold Reform Act 2002.</p>
-      <p><strong>"Services"</strong> means the consultancy services we provide including eligibility assessment, RTM/enfranchisement support, and property management advisory.</p>
+      <p><strong>"We", "Us", "Our"</strong> means Liberty Bell Property Management Ltd, a company registered in England and Wales.</p>
+      <p><strong>"You", "Your"</strong> means the individual, RMC, RTM company, or group of leaseholders entering into a contract with us.</p>
+      <p><strong>"Services"</strong> means the property management services we provide including block management, service charge administration, building insurance, and related services.</p>
+      <p><strong>"Property"</strong> means the building or development for which we provide management services.</p>
       <p><strong>"Business Day"</strong> means a day other than a Saturday, Sunday, or public holiday in England when banks in London are open for business.</p>
     `
   },
@@ -40,17 +40,18 @@ const sections = [
     icon: Briefcase,
     title: '2. Our Services',
     content: `
-      <p>We provide consultancy services which may include:</p>
+      <p>We provide property management services which may include:</p>
       <ul>
-        <li>Eligibility assessment for Right to Manage and Collective Enfranchisement</li>
-        <li>Assistance in setting up RTM companies</li>
-        <li>Drafting and serving statutory notices</li>
-        <li>Liaising with landlords and their representatives</li>
-        <li>Advising on compliance with legal procedures</li>
-        <li>Support in First-tier Tribunal proceedings if required</li>
-        <li>General project guidance and management</li>
+        <li>Service charge budgeting and administration</li>
+        <li>Building management and maintenance coordination</li>
+        <li>Building insurance arrangement and claims management</li>
+        <li>Onsite staff management where applicable</li>
+        <li>Community management and resident communications</li>
+        <li>RMC/RTM company secretarial services</li>
+        <li>Contractor procurement and supervision</li>
+        <li>Health and safety compliance</li>
       </ul>
-      <p class="mt-4"><strong>Important:</strong> We are not a law firm and do not provide legal representation. We may refer you to qualified solicitors where appropriate.</p>
+      <p class="mt-4"><strong>Important:</strong> We only manage properties where leaseholders are in control, either through an RMC or RTM company. We believe happy leaseholders equal a happy freeholder.</p>
     `
   },
   {
@@ -61,10 +62,11 @@ const sections = [
       <p>When using our services, you agree to:</p>
       <ul>
         <li>Provide accurate and timely information as requested</li>
-        <li>Grant necessary access to premises, systems, and data</li>
-        <li>Have proper authority to act on behalf of your building or leaseholder group</li>
-        <li>Prepare relevant premises and systems at your own cost</li>
-        <li>Not engage other consultants for similar services during our engagement without prior written consent</li>
+        <li>Grant necessary access to the property and common areas</li>
+        <li>Have proper authority to act on behalf of your RMC, RTM company, or leaseholder group</li>
+        <li>Pay service charges and management fees when due</li>
+        <li>Comply with the terms of your lease and any house rules</li>
+        <li>Notify us promptly of any issues, defects, or emergencies at the property</li>
       </ul>
     `
   },
@@ -75,10 +77,10 @@ const sections = [
     content: `
       <p>We may collect, store, and process data provided during our services. We are entitled to anonymise and aggregate this data to:</p>
       <ul>
-        <li>Develop and maintain a national database of leasehold information</li>
-        <li>Conduct benchmarking and market analysis</li>
-        <li>Create insights and research products</li>
-        <li>Improve our services and develop new offerings</li>
+        <li>Develop and maintain benchmarking data for service charges</li>
+        <li>Conduct market analysis and contractor performance reviews</li>
+        <li>Create insights to improve our services</li>
+        <li>Develop new offerings for leaseholders</li>
       </ul>
       <p class="mt-4"><strong>Privacy Guarantee:</strong> All data will be fully anonymised - no individual property, client, or personal data will be identifiable. We comply with UK GDPR and the Data Protection Act 2018.</p>
     `
@@ -90,10 +92,10 @@ const sections = [
     content: `
       <p>Payment terms for our services:</p>
       <ul>
-        <li>Fixed prices exclude VAT and ancillary expenses unless specified</li>
-        <li>Payment is due within 30 days of invoice</li>
+        <li>Management fees are agreed in advance and included in the service charge budget</li>
+        <li>Service charges are payable in accordance with your lease terms</li>
+        <li>We do not take commissions on insurance or other services - everything is included in our transparent fee</li>
         <li>We may charge interest on late payments under the Late Payment of Commercial Debts Act 1998</li>
-        <li>We may suspend services until payment is received in full</li>
         <li>All payments must be made without deduction or set-off except as required by law</li>
       </ul>
     `
@@ -112,10 +114,11 @@ const sections = [
       <ul>
         <li>Loss of profits, business, goodwill, or anticipated savings</li>
         <li>Indirect, consequential or economic losses</li>
-        <li>Legal consequences of statutory deadline failures beyond our control</li>
+        <li>Acts or omissions of contractors engaged for the property</li>
         <li>Data loss or corruption</li>
+        <li>Delays caused by factors outside our reasonable control</li>
       </ul>
-      <p class="mt-4">Our total liability is limited to the price paid for the services. We do not guarantee successful outcomes as results may be affected by factors outside our control.</p>
+      <p class="mt-4">Our total liability is limited to the management fees paid for the services in the relevant year.</p>
     `
   },
   {
@@ -123,7 +126,7 @@ const sections = [
     icon: Building,
     title: '7. Intellectual Property',
     content: `
-      <p>All intellectual property rights in our deliverables remain our property. We grant you a non-exclusive, non-transferable licence to use deliverables as necessary for the services.</p>
+      <p>All intellectual property rights in our systems, processes, reports, and deliverables remain our property. We grant you a non-exclusive, non-transferable licence to use deliverables as necessary for the management of your property.</p>
       <p class="mt-4">Any feedback you provide may be used by us without obligation to you.</p>
     `
   },
@@ -143,17 +146,17 @@ const sections = [
     `
   },
   {
-    id: 'rtm',
+    id: 'management',
     icon: AlertTriangle,
-    title: '9. RTM Process & Legal Proceedings',
+    title: '9. Property Management Specifics',
     content: `
-      <p>For Right to Manage services, please note:</p>
+      <p>For property management services, please note:</p>
       <ul>
-        <li>The RTM company (once formed) is the formal party to legal proceedings, not individual leaseholders</li>
-        <li>We act as consultants and advisers only, not legal representatives</li>
-        <li>You are responsible for forming the RTM company and ensuring compliance</li>
-        <li>We are not liable for acts or omissions of the RTM company or its directors</li>
-        <li>Tribunal support is administrative only unless separately agreed in writing</li>
+        <li>We act on behalf of the RMC or RTM company, not individual leaseholders</li>
+        <li>Decisions affecting the property are made by the directors of the RMC/RTM company</li>
+        <li>We will always seek approval for expenditure above agreed thresholds</li>
+        <li>Emergency works may be authorised without prior approval where necessary to protect life or property</li>
+        <li>We maintain professional indemnity insurance (details available on request)</li>
       </ul>
     `
   },
@@ -162,14 +165,14 @@ const sections = [
     icon: Clock,
     title: '10. Termination',
     content: `
-      <p>Either party may terminate our agreement if the other party:</p>
+      <p>Either party may terminate our agreement:</p>
       <ul>
-        <li>Fails to pay within 7 days of written notice</li>
-        <li>Materially breaches terms and fails to remedy within 14 days of notice</li>
-        <li>Becomes insolvent or enters administration</li>
-        <li>Repeatedly breaches terms showing inability to comply</li>
+        <li>By giving notice as specified in the management agreement (typically 3 months)</li>
+        <li>If the other party materially breaches terms and fails to remedy within 14 days of notice</li>
+        <li>If the other party becomes insolvent or enters administration</li>
       </ul>
-      <p class="mt-4">Termination doesn't affect accrued rights or obligations.</p>
+      <p class="mt-4">On termination, we will provide a full handover of records, accounts, and contractor information to ensure smooth transition.</p>
+      <p class="mt-4"><strong>Our Pledge:</strong> If you aren't blown away by our work after one year of working with us, we will personally find you another managing agent to replace us!</p>
     `
   },
   {
@@ -180,8 +183,8 @@ const sections = [
       <p><strong>Force Majeure:</strong> Neither party is liable for delays due to circumstances beyond reasonable control. If delays exceed 3 months, either party may terminate with 14 days' notice.</p>
       <p class="mt-4"><strong>Governing Law:</strong> These terms are governed by the laws of England and Wales.</p>
       <p class="mt-4"><strong>Dispute Resolution:</strong> Disputes should be resolved informally first, then through mediation before legal proceedings.</p>
-      <p class="mt-4"><strong>Third Parties:</strong> We may recommend third-party providers but accept no liability for their services.</p>
-      <p class="mt-4"><strong>Insurance:</strong> We hold professional indemnity insurance (details available on request).</p>
+      <p class="mt-4"><strong>Third Parties:</strong> We engage contractors and service providers on your behalf but remain responsible for their supervision and performance monitoring.</p>
+      <p class="mt-4"><strong>Insurance:</strong> We hold professional indemnity insurance and public liability insurance (details available on request).</p>
     `
   }
 ]
@@ -215,10 +218,7 @@ export default function TermsAndConditions() {
               Terms & Conditions
             </h1>
             <p className="text-xl text-liberty-background/70 max-w-3xl mx-auto mb-4">
-              Liberty Bell Ethical Enfranchisement Ltd
-            </p>
-            <p className="text-sm text-liberty-background/60">
-              Company No: 16430826 | Effective: September 2025
+              Liberty Bell Property Management Ltd
             </p>
           </motion.div>
         </div>
@@ -235,8 +235,8 @@ export default function TermsAndConditions() {
           >
             <h2 className="text-2xl font-semibold text-liberty-background mb-4">Welcome</h2>
             <p className="text-liberty-background/80 leading-relaxed mb-4">
-              These terms and conditions apply when you engage Liberty Bell Ethical Enfranchisement Ltd for 
-              consultancy services. They form the basis of our agreement and prevail over any other terms.
+              These terms and conditions apply when you engage Liberty Bell Property Management Ltd for 
+              property management services. They form the basis of our agreement and prevail over any other terms.
             </p>
             <p className="text-liberty-background/80 leading-relaxed">
               By instructing us to proceed with our services, you confirm that you have read, understood, 

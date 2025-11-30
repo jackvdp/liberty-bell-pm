@@ -22,32 +22,32 @@ const sections = [
     icon: Database,
     title: "1. Information We Collect",
     content: [
-      "Personal Information: When you register or use our services, we collect information such as your name, email address, phone number, and property address.",
-      "Property Information: Details about your building, including number of flats, management structure, and lease information to assess eligibility for RTM or enfranchisement.",
+      "Personal Information: When you contact us or use our services, we collect information such as your name, email address, phone number, and property address.",
+      "Property Information: Details about your building, including number of flats, management structure, service charge information, and maintenance records.",
       "Usage Data: We automatically collect information about how you interact with our website, including IP address, browser type, pages visited, and time spent on pages.",
-      "Communications: Records of your correspondence with us, including emails, phone calls, and support tickets."
+      "Communications: Records of your correspondence with us, including emails, phone calls, and support requests."
     ]
   },
   {
     icon: UserCheck,
     title: "2. How We Use Your Information",
     content: [
-      "Service Delivery: To provide our RTM and enfranchisement advisory services, process eligibility checks, and manage your account.",
-      "Communication: To send you important updates about your case, respond to inquiries, and provide customer support.",
+      "Service Delivery: To provide our property management services, administer service charges, coordinate maintenance, and manage your building effectively.",
+      "Communication: To send you important updates about your property, respond to inquiries, and provide resident support.",
       "Legal Compliance: To comply with legal obligations, respond to legal requests, and protect our rights and the rights of others.",
-      "Improvement: To analyse usage patterns, improve our services, and develop new features that benefit leaseholders.",
-      "Marketing: With your consent, to send you information about our services, legal updates, and educational content about leasehold reform."
+      "Improvement: To analyse service performance, improve our offerings, and develop new features that benefit leaseholders.",
+      "Marketing: With your consent, to send you information about our services and updates relevant to leaseholders."
     ]
   },
   {
     icon: Eye,
     title: "3. How We Share Your Information",
     content: [
-      "Service Providers: We may share your information with trusted third parties who assist us in operating our website and delivering our services, subject to confidentiality agreements.",
+      "Service Providers: We may share your information with contractors, insurers, and other service providers who assist in managing your property, subject to confidentiality agreements.",
+      "RMC/RTM Directors: Information relevant to the management of your building is shared with the directors of your Resident Management Company or Right to Manage company.",
       "Legal Requirements: We may disclose your information if required by law, court order, or governmental regulation.",
       "Business Transfers: In the event of a merger, acquisition, or sale of assets, your information may be transferred to the successor entity.",
-      "With Your Consent: We will share your information with other parties only when you have given us explicit permission to do so.",
-      "Aggregated Data: We may share anonymised, aggregated data that cannot identify you personally for research and statistical purposes."
+      "Aggregated Data: We may share anonymised, aggregated data that cannot identify you personally for benchmarking and research purposes."
     ]
   },
   {
@@ -100,8 +100,8 @@ const sections = [
     title: "8. Data Retention",
     content: [
       "We retain your personal data only for as long as necessary to fulfil the purposes for which it was collected.",
-      "Account information is retained while your account is active and for a reasonable period thereafter.",
-      "Legal records may be retained for longer periods as required by law or for legitimate business purposes.",
+      "Property management records are retained for the duration of our management agreement and for a reasonable period thereafter.",
+      "Financial records are retained for 7 years as required by law.",
       "You can request deletion of your data at any time, subject to legal and contractual obligations.",
       "When data is no longer needed, it is securely deleted or anonymised."
     ]
@@ -109,12 +109,8 @@ const sections = [
 ]
 
 const dataController = {
-  name: "Liberty Bell Limited",
-  registration: "Company Registration Number: [To be provided]",
-  ico: "ICO Registration Number: [To be provided]",
-  address: "Registered Address: [To be provided]",
-  email: "privacy@libertybell.co.uk",
-  dpo: "Data Protection Officer: [Name to be provided]"
+  name: "Liberty Bell Property Management Ltd",
+  email: "lbpm@libertybellpm.co.uk",
 }
 
 export default function PrivacyPolicy() {
@@ -142,9 +138,6 @@ export default function PrivacyPolicy() {
             <p className="text-xl text-liberty-background/70 max-w-3xl mx-auto mb-4">
               Your privacy is important to us. This policy explains how we collect, use, and protect your personal information.
             </p>
-            <p className="text-sm text-liberty-background/60">
-              Last updated: {new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}
-            </p>
           </motion.div>
         </div>
       </section>
@@ -160,9 +153,9 @@ export default function PrivacyPolicy() {
           >
             <h2 className="text-2xl font-semibold text-liberty-background mb-4">Our Commitment to Your Privacy</h2>
             <p className="text-liberty-background/80 leading-relaxed mb-4">
-              Liberty Bell Ethical Enfranchisement ("Liberty Bell", "we", "us", or "our") is committed to protecting 
+              Liberty Bell Property Management Ltd ("Liberty Bell", "we", "us", or "our") is committed to protecting 
               your personal information and your right to privacy. This Privacy Policy explains how we collect, use, 
-              disclose, and safeguard your information when you use our website and services.
+              disclose, and safeguard your information when you use our website and property management services.
             </p>
             <p className="text-liberty-background/80 leading-relaxed">
               We comply with the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018. 
@@ -227,23 +220,9 @@ export default function PrivacyPolicy() {
                   <p className="font-medium text-liberty-background">{dataController.name}</p>
                 </div>
                 <div>
-                  <p className="text-sm text-liberty-background/60 mb-1">Registration</p>
-                  <p className="font-medium text-liberty-background">{dataController.registration}</p>
+                  <p className="text-sm text-liberty-background/60 mb-1">Contact for Privacy Matters</p>
+                  <p className="font-medium text-liberty-background">{dataController.email}</p>
                 </div>
-                <div>
-                  <p className="text-sm text-liberty-background/60 mb-1">ICO Registration</p>
-                  <p className="font-medium text-liberty-background">{dataController.ico}</p>
-                </div>
-                <div>
-                  <p className="text-sm text-liberty-background/60 mb-1">Data Protection Officer</p>
-                  <p className="font-medium text-liberty-background">{dataController.dpo}</p>
-                </div>
-              </div>
-              
-              <div className="pt-4 border-t border-liberty-primary/20">
-                <p className="text-sm text-liberty-background/60 mb-1">Contact for Privacy Matters</p>
-                <p className="font-medium text-liberty-background">{dataController.email}</p>
-                <p className="text-sm text-liberty-background/70 mt-2">{dataController.address}</p>
               </div>
             </div>
           </motion.div>
@@ -301,7 +280,7 @@ export default function PrivacyPolicy() {
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-liberty-primary text-liberty-base rounded-lg hover:bg-liberty-primary/90 transition-colors"
               >
                 <Mail className="w-5 h-5" />
-                Contact Privacy Team
+                Contact Us
               </Link>
               <Link 
                 href="/terms" 
