@@ -193,7 +193,7 @@ export default function Hero() {
                                         <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                                     </Link>
                                 </Button>
-                                <Button size="xl" variant="outline" asChild className="border-white/80 text-white hover:bg-white hover:text-liberty-background">
+                                <Button size="xl" variant="outline" asChild className="border-white/80 text-white hover:bg-white hover:text-liberty-text-on-accent">
                                     <a 
                                         href="https://www.libertybellenfranchise.co.uk/" 
                                         target="_blank" 
