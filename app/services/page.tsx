@@ -12,6 +12,8 @@ import {
   FileText,
   CheckCircle,
   ArrowRight,
+  ExternalLink,
+  Scale,
 } from 'lucide-react'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
@@ -279,6 +281,48 @@ export default function ServicesPage() {
           }>
             <ServicesGrid />
           </Suspense>
+        </div>
+      </section>
+
+      {/* Enfranchisement Section */}
+      <section className="py-16 bg-liberty-primary/5 border-y border-liberty-primary/10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12"
+          >
+            <div className="w-20 h-20 bg-liberty-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+              <Scale className="w-10 h-10 text-liberty-primary" />
+            </div>
+            <div className="flex-1 text-center lg:text-left">
+              <h2 className="font-reckless text-2xl lg:text-3xl font-semibold text-liberty-background mb-3">
+                Not Yet in Control of <span className="text-liberty-accent">Your Property?</span>
+              </h2>
+              <p className="text-liberty-background/70 mb-6">
+                If you&#39;re looking to gain Right to Manage or pursue enfranchisement, our sister company
+                Liberty Bell Ethical Enfranchisement can help you take the first step towards taking 
+                control of your building.
+              </p>
+              <Button
+                asChild
+                variant="outline"
+                className="border-liberty-primary text-liberty-primary hover:bg-liberty-primary hover:text-liberty-base"
+              >
+                <a 
+                  href="https://www.libertybellenfranchise.co.uk/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
+                  Visit Liberty Bell Enfranchisement
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              </Button>
+            </div>
+          </motion.div>
         </div>
       </section>
 

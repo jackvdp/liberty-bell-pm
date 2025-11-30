@@ -4,12 +4,12 @@ import { Mail } from 'lucide-react'
 
 export default function Footer() {
   const services = [
-    { title: "Service Charge & Budgeting", href: "/services/service-charge-budgeting" },
-    { title: "Building Management", href: "/services/building-management" },
-    { title: "Building Insurance", href: "/services/building-insurance" },
-    { title: "Onsite Staff Management", href: "/services/onsite-staff-management" },
-    { title: "Community Management", href: "/services/community-management" },
-    { title: "RMC/RTM Company Secretariat", href: "/services/rmc-rtm-secretariat" },
+    { title: "Service Charge & Budgeting", href: "/services?service=service-charge" },
+    { title: "Building Management", href: "/services?service=building-management" },
+    { title: "Building Insurance", href: "/services?service=building-insurance" },
+    { title: "Onsite Staff Management", href: "/services?service=onsite-staff" },
+    { title: "Community Management", href: "/services?service=community-management" },
+    { title: "RMC/RTM Company Secretariat", href: "/services?service=rmc-rtm" },
   ]
 
   const company = [
@@ -61,9 +61,11 @@ export default function Footer() {
 
               {/* Services */}
               <div>
-                <h3 className="text-lg font-reckless font-bold !text-liberty-text-on-dark mb-4">
-                  Services
-                </h3>
+                <Link href="/services">
+                  <h3 className="text-lg font-reckless font-bold !text-liberty-text-on-dark mb-4 hover:text-liberty-accent transition-colors">
+                    Services
+                  </h3>
+                </Link>
                 <ul className="space-y-3">
                   {services.map((service, index) => (
                       <li key={index}>
