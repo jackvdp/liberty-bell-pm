@@ -138,21 +138,18 @@ export const ModalBody = ({
             )}
             initial={{
               opacity: 0,
-              scale: 0.96,
-              y: 10,
+              y: 40,
             }}
             animate={{
               opacity: 1,
-              scale: 1,
               y: 0,
             }}
             exit={{
               opacity: 0,
-              scale: 0.96,
-              y: 10,
+              y: 40,
             }}
             transition={{
-              duration: 0.2,
+              duration: 0.25,
               ease: "easeOut",
             }}
           >
