@@ -17,8 +17,8 @@ export interface SEOConfig {
 
 const siteConfig = {
   name: 'Liberty Bell Property Management',
-  description: 'Turn every unhappy leaseholder into a happy and empowered commonholder through technology, transparency, and legal empowerment.',
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://libertybellpm.com',
+  description: 'A property management company working for leaseholders. We put leaseholders\' needs before profits, offering transparent and fair block management services.',
+  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.libertybellpm.co.uk',
   ogImage: '/og-image.png',
   twitterHandle: '@libertybellpm',
 };
@@ -113,125 +113,59 @@ export function generateMetadata(config: SEOConfig): Metadata {
  */
 export const seoConfig = {
   home: {
-    title: 'Liberty Bell - Ethical Enfranchisement',
-    description: 'Help leaseholders across England & Wales gain legal control through Right to Manage and Collective Enfranchisement. Property Institute accredited. Fixed fees, expert guidance.',
+    title: 'Liberty Bell Property Management - Putting Leaseholders First',
+    description: 'A property management company working for leaseholders. Transparent service charges, fair block management, and real value for money. We manage properties where leaseholders are in control.',
     keywords: [
-      'right to manage',
-      'collective enfranchisement',
-      'leasehold property',
-      'freehold purchase',
-      'leaseholder rights',
-      'RTM company',
-      'buy freehold',
-      'leasehold reform',
       'property management',
-      'service charges',
+      'block management',
+      'leaseholder services',
+      'service charge',
+      'building management',
+      'resident management company',
+      'RMC',
+      'RTM company',
+      'right to manage',
+      'leaseholder rights',
+      'transparent management',
     ],
   },
 
   about: {
     title: 'About Us - Leaseholders Helping Leaseholders',
-    description: 'We\'re leaseholders who\'ve been through the system. Property Institute accredited experts helping you take control through RTM and Collective Enfranchisement.',
+    description: 'We\'re leaseholders who\'ve been through the system. After seven years of frustration with managing agents, we built Liberty Bell to put leaseholders in control.',
     keywords: [
       'about liberty bell',
-      'property institute accredited',
+      'property management company',
       'leaseholder support',
-      'RTM experts',
-      'enfranchisement specialists',
+      'ethical property management',
+      'leaseholder owned',
     ],
   },
 
-  howItWorks: {
-    title: 'How It Works - 3 Simple Steps to Take Control',
-    description: 'Our simple 3-step process: Check eligibility, we handle the legal work, choose your management path. Fixed fees, expert guidance, proven results.',
+  services: {
+    title: 'Property Management Services - Complete Building Management',
+    description: 'Comprehensive property management services including service charge budgeting, building management, insurance, onsite staff management, community management, and RMC/RTM secretariat services.',
     keywords: [
-      'RTM process',
-      'how to buy freehold',
-      'enfranchisement process',
-      'take control steps',
-      'leasehold to freehold',
-    ],
-  },
-
-  rightToManage: {
-    title: 'Right to Manage (RTM) - Take Control of Your Building',
-    description: 'Take over building management without buying the freehold. Control repairs, service charges, and contractors. Legal right for qualifying leaseholders.',
-    keywords: [
-      'right to manage',
-      'RTM process',
-      'RTM company',
-      'building management control',
-      'leasehold management',
-      'take over management',
-    ],
-  },
-
-  collectiveEnfranchisement: {
-    title: 'Collective Enfranchisement - Buy Your Freehold Together',
-    description: 'Buy your building\'s freehold collectively. Eliminate ground rent, extend leases to 999 years, increase property value. Expert guidance, fixed fees.',
-    keywords: [
-      'collective enfranchisement',
-      'buy freehold',
-      'freehold purchase',
-      'eliminate ground rent',
-      'lease extension',
-      'increase property value',
-    ],
-  },
-
-  rmcProcess: {
-    title: 'RMC Takeover - Control Your Existing Structure',
-    description: 'Take control of your existing Residents Management Company. Improve service quality, reduce costs, transparent management.',
-    keywords: [
-      'RMC takeover',
-      'residents management company',
-      'RMC control',
+      'property management services',
+      'service charge budgeting',
       'building management',
-    ],
-  },
-
-  commonholdConversion: {
-    title: 'Commonhold Conversion - Future of Property Ownership',
-    description: 'Convert to commonhold ownership. Perpetual freehold, no ground rent, equal ownership. The future of flat ownership in England & Wales.',
-    keywords: [
-      'commonhold conversion',
-      'commonhold ownership',
-      'leasehold to commonhold',
-      'perpetual ownership',
-      'commonhold association',
-    ],
-  },
-
-  propertyManagement: {
-    title: 'Property Management Services - Professional Building Care',
-    description: 'Professional property management for leaseholder-controlled buildings. Transparent costs, quality service, ongoing support.',
-    keywords: [
-      'property management',
-      'building management services',
-      'leaseholder management',
-      'professional building care',
+      'building insurance',
+      'onsite staff management',
+      'community management',
+      'RMC secretariat',
+      'RTM company management',
+      'block management services',
     ],
   },
 
   contact: {
-    title: 'Contact Us - Get Expert Advice',
-    description: 'Get in touch with our Property Institute accredited team. Free initial consultation. Expert guidance on RTM and Collective Enfranchisement.',
+    title: 'Contact Us - Get in Touch',
+    description: 'Contact Liberty Bell Property Management for a free consultation. We\'re here to help leaseholders take control of their buildings with transparent, fair management.',
     keywords: [
       'contact liberty bell',
-      'RTM advice',
-      'enfranchisement consultation',
-      'leasehold help',
-    ],
-  },
-
-  eligibilityCheck: {
-    title: 'Check Your Eligibility - Start Your Journey',
-    description: 'Quick 2-minute eligibility check. Find out if you qualify for Right to Manage or Collective Enfranchisement. Free, no obligation.',
-    keywords: [
-      'RTM eligibility',
-      'enfranchisement eligibility',
-      'check qualification',
-      'leasehold rights check',
+      'property management enquiry',
+      'block management consultation',
+      'leaseholder support',
     ],
   },
 

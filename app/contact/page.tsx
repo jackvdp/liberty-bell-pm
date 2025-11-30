@@ -44,11 +44,11 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.5 }}
-            className="flex flex-wrap justify-center gap-8 mb-12"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-2xl mx-auto mb-12"
           >
             <a 
               href={contactInfo.email.href}
-              className="group flex items-center gap-3 border border-liberty-primary p-8 hover:border-liberty-accent transition-all duration-300"
+              className="group flex items-center justify-center gap-3 border border-liberty-primary p-8 hover:border-liberty-accent transition-all duration-300"
             >
               <Mail className="w-5 h-5 text-liberty-primary group-hover:text-liberty-accent transition-colors" />
               <span className="text-liberty-primary group-hover:text-liberty-accent transition-colors">
@@ -56,7 +56,7 @@ export default function ContactPage() {
               </span>
             </a>
             
-            <div className="flex items-center gap-3 border border-liberty-primary p-8">
+            <div className="flex items-center justify-center gap-3 border border-liberty-primary p-8">
               <MapPin className="w-5 h-5 text-liberty-primary" />
               <span className="text-liberty-primary">{contactInfo.location.display}</span>
             </div>
