@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, ExternalLink } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
@@ -78,19 +78,33 @@ export default function Hero() {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                                className="flex flex-col sm:flex-row gap-4"
+                                className="flex flex-col gap-4"
                             >
-                                <Button size="xl" asChild className="bg-liberty-primary hover:bg-liberty-primary/90 text-liberty-text-on-dark">
-                                    <Link href="/contact" className="flex items-center gap-3 group">
-                                        Get in Touch
-                                        <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-                                    </Link>
-                                </Button>
-                                <Button size="xl" variant="outline" asChild className="border-liberty-primary text-liberty-primary hover:bg-liberty-primary hover:text-liberty-text-on-dark">
-                                    <Link href="/services">
-                                        Our Services
-                                    </Link>
-                                </Button>
+                                <div className="flex flex-col sm:flex-row gap-4">
+                                    <Button size="xl" asChild className="bg-liberty-primary hover:bg-liberty-primary/90 text-liberty-text-on-dark">
+                                        <Link href="/services" className="flex items-center gap-3 group">
+                                            Our Services
+                                            <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                                        </Link>
+                                    </Button>
+                                    <Button size="xl" variant="outline" asChild className="border-liberty-primary text-liberty-primary hover:bg-liberty-primary hover:text-liberty-text-on-dark">
+                                        <Link href="/contact">
+                                            Get in Touch
+                                        </Link>
+                                    </Button>
+                                </div>
+                                <p className="text-sm text-liberty-background/60">
+                                    Not yet in control of your building?{' '}
+                                    <a 
+                                        href="https://www.libertybellenfranchise.co.uk/" 
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                        className="text-liberty-primary hover:text-liberty-accent underline underline-offset-2 inline-flex items-center gap-1"
+                                    >
+                                        Learn about Right to Manage
+                                        <ExternalLink size={12} />
+                                    </a>
+                                </p>
                             </motion.div>
                         </div>
                     </motion.div>
@@ -159,20 +173,20 @@ export default function Hero() {
                     
                     {/* Centered overlay text - fades in and slides up as image is fully revealed */}
                     <motion.div 
-                        className="absolute inset-0 flex items-center justify-center z-20"
+                        className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none"
                         style={{ 
                             opacity: overlayTextOpacity,
                             y: useTransform(scrollYProgress, [0.25, 0.4], [100, 0])
                         }}
                     >
-                        <div className="text-center px-8 max-w-4xl">
+                        <div className="text-center px-8 max-w-4xl pointer-events-auto">
                             <h2 className="text-3xl lg:text-4xl xl:text-5xl font-reckless font-bold !text-white mb-6" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
                                 We&apos;ve Been Where You Are
                             </h2>
                             <p className="font-family-reckless text-xl lg:text-2xl xl:text-3xl !text-white/95 leading-relaxed max-w-3xl mx-auto mb-8" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
                                 After seven years of frustration with unscrupulous managing agents, we knew leaseholders deserved better. That&apos;s why we built Liberty Bell, a property management company that puts you in control.
                             </p>
-                            <Button size="xl" asChild className="bg-liberty-accent hover:bg-liberty-accent/90 text-liberty-text-on-accent pointer-events-auto">
+                            <Button size="xl" asChild className="bg-liberty-accent hover:bg-liberty-accent/90 text-liberty-text-on-accent">
                                 <Link href="/about" className="flex items-center gap-3 group">
                                     Our Story
                                     <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
