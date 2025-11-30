@@ -21,7 +21,7 @@ const steps = [
     {
         number: "03",
         icon: Handshake,
-        title: "Take Back Control",
+        title: "Enjoy Better Management",
         description: "Once you're happy, we handle the transition seamlessly. You'll have transparent management, fair charges, and a team that actually works for you."
     }
 ]

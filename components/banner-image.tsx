@@ -49,7 +49,7 @@ export default function BannerImage() {
                     className="text-center px-6 max-w-4xl"
                 >
                     <h2 className="text-3xl lg:text-4xl xl:text-5xl font-reckless font-bold !text-white mb-4" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.3)' }}>
-                        Ready to Take Back Control?
+                        Tired of Poor Management?
                     </h2>
                     <p className="text-lg lg:text-xl !text-white/90 mb-8 max-w-2xl mx-auto" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.3)' }}>
                         Join the growing number of leaseholders who&apos;ve switched to transparent, fair property management.
