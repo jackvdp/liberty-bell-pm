@@ -105,6 +105,15 @@ export default function Navbar() {
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="grid gap-3 p-6 w-96 bg-liberty-base border border-liberty-secondary/30 rounded-lg shadow-lg">
+                      <ListItem 
+                        href="/services" 
+                        title="View All Services" 
+                        icon={<Building className="w-4 h-4" />}
+                        className="bg-liberty-primary/5 border border-liberty-primary/20"
+                      >
+                        The complete building management solution
+                      </ListItem>
+                      <div className="border-t border-liberty-secondary/30 my-2" />
                       {services.map((service) => (
                         <ListItem 
                           key={service.href}
@@ -215,6 +224,19 @@ export default function Navbar() {
                   <div className="space-y-4">
                     <h3 className="font-reckless font-semibold text-liberty-background text-lg border-b border-liberty-secondary/30 pb-2">Services</h3>
                     <div className="space-y-1">
+                      <Link 
+                        href="/services" 
+                        className={`${getMobileLinkClasses('/services')} group bg-liberty-primary/5 border border-liberty-primary/20`}
+                        onClick={() => setIsOpen(false)}
+                      >
+                        <div className="w-8 h-8 bg-liberty-primary/20 rounded-lg flex items-center justify-center group-hover:bg-liberty-primary/30 transition-colors">
+                          <Building className="w-4 h-4 text-liberty-primary" />
+                        </div>
+                        <div>
+                          <div className="font-medium">View All Services</div>
+                          <div className="text-sm text-liberty-background/50">Complete building management</div>
+                        </div>
+                      </Link>
                       {services.map((service) => (
                         <Link 
                           key={service.href}
