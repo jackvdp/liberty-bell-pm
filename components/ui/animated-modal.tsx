@@ -127,7 +127,7 @@ export const ModalBody = ({
             opacity: 0,
             backdropFilter: "blur(0px)",
           }}
-          className="fixed [perspective:800px] [transform-style:preserve-3d] inset-0 h-full w-full flex items-center justify-center z-[100]"
+          className="fixed inset-0 h-full w-full flex items-center justify-center z-[100]"
         >
           <Overlay />
           <motion.div
@@ -138,25 +138,22 @@ export const ModalBody = ({
             )}
             initial={{
               opacity: 0,
-              scale: 0.5,
-              rotateX: 40,
-              y: 40,
+              scale: 0.96,
+              y: 10,
             }}
             animate={{
               opacity: 1,
               scale: 1,
-              rotateX: 0,
               y: 0,
             }}
             exit={{
               opacity: 0,
-              scale: 0.8,
-              rotateX: 10,
+              scale: 0.96,
+              y: 10,
             }}
             transition={{
-              type: "spring",
-              stiffness: 260,
-              damping: 15,
+              duration: 0.2,
+              ease: "easeOut",
             }}
           >
             <CloseIcon />
@@ -237,7 +234,7 @@ const CloseIcon = () => {
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="text-liberty-background/70 hover:text-liberty-background h-5 w-5 group-hover:scale-125 group-hover:rotate-3 transition duration-200"
+        className="text-liberty-background/70 hover:text-liberty-background h-5 w-5 transition-colors duration-200"
       >
         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
         <path d="M18 6l-12 12" />
