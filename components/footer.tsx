@@ -33,7 +33,7 @@ export default function Footer() {
               <div className="lg:col-span-1">
                 <div className="mb-6">
                   <Image
-                      src="/images/logo.avif"
+                      src="/images/logo-white.png"
                       alt="Liberty Bell Property Management"
                       width={320}
                       height={107}

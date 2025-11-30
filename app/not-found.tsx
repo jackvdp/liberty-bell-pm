@@ -21,26 +21,14 @@ export default function NotFound() {
             transition={{ duration: 0.5, ease: 'easeOut' }}
             className="mb-8"
           >
-            <div className="relative inline-block">
-              <motion.span
-                className="text-[10rem] sm:text-[14rem] font-reckless font-bold text-liberty-secondary/30 select-none leading-none"
-                initial={{ y: 20 }}
-                animate={{ y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-              >
-                404
-              </motion.span>
-              <motion.div
-                className="absolute inset-0 flex items-center justify-center"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-              >
-                <div className="w-20 h-20 sm:w-24 sm:h-24 bg-liberty-primary/10 rounded-full flex items-center justify-center">
-                  <Building className="w-10 h-10 sm:w-12 sm:h-12 text-liberty-primary" />
-                </div>
-              </motion.div>
-            </div>
+            <motion.span
+              className="text-[10rem] sm:text-[14rem] font-reckless font-bold text-liberty-primary/20 select-none leading-none block"
+              initial={{ y: 20 }}
+              animate={{ y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              404
+            </motion.span>
           </motion.div>
 
           {/* Message */}
