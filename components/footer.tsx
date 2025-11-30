@@ -91,6 +91,19 @@ export default function Footer() {
                       </li>
                   ))}
                 </ul>
+
+                {/* Sister Company */}
+                <h3 className="text-lg font-reckless font-bold !text-liberty-text-on-dark mb-4 mt-8">
+                  Take Back Control
+                </h3>
+                <a 
+                  href="https://www.libertybellenfranchise.co.uk/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-liberty-secondary hover:text-liberty-accent transition-colors text-sm"
+                >
+                  Liberty Bell Ethical Enfranchisement
+                </a>
               </div>
             </div>
           </div>
