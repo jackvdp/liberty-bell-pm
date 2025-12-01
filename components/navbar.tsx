@@ -190,7 +190,7 @@ export default function Navbar() {
                 {/* Logo and Brand */}
                 <div className="flex items-center gap-3 px-2 py-4 flex-shrink-0">
                   <Image
-                    src="/logo.png"
+                    src="/images/logo-small.png"
                     alt="Liberty Bell Property Management"
                     width={40}
                     height={40}
