@@ -40,7 +40,7 @@ const services = [
         id: 'rmc-rtm',
         icon: FileText,
         title: "RMC/RTM Company Secretariat",
-        description: "We handle all the company admin so directors only need to make decisions—not drown in paperwork."
+        description: "We handle all the company admin so directors only need to make decisions – not drown in paperwork."
     }
 ]
 

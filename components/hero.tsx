@@ -22,6 +22,11 @@ export default function Hero() {
     // Overlay text fades in as image is fully revealed
     const overlayTextOpacity = useTransform(scrollYProgress, [0.25, 0.4], [0, 1])
     
+    // Control pointer events based on overlay visibility
+    const overlayPointerEvents = useTransform(scrollYProgress, (progress) => 
+        progress > 0.25 ? 'auto' : 'none'
+    )
+    
     // Diagonal clip path - starts with more white space, original angle
     // Bottom left point moves from 40% to -50% (off screen left)
     // Top point moves from 65% to -25% (off screen left)
@@ -173,13 +178,14 @@ export default function Hero() {
                     
                     {/* Centered overlay text - fades in and slides up as image is fully revealed */}
                     <motion.div 
-                        className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none"
+                        className="absolute inset-0 flex items-center justify-center z-20"
                         style={{ 
                             opacity: overlayTextOpacity,
-                            y: useTransform(scrollYProgress, [0.25, 0.4], [100, 0])
+                            y: useTransform(scrollYProgress, [0.25, 0.4], [100, 0]),
+                            pointerEvents: overlayPointerEvents
                         }}
                     >
-                        <div className="text-center px-8 max-w-4xl pointer-events-auto">
+                        <div className="text-center px-8 max-w-4xl">
                             <h2 className="text-3xl lg:text-4xl xl:text-5xl font-reckless font-bold !text-white mb-6" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
                                 We&apos;ve Been Where You Are
                             </h2>
