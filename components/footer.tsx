@@ -47,10 +47,10 @@ export default function Footer() {
                   <div className="flex items-center gap-3">
                     <Mail className="w-4 h-4 text-liberty-accent flex-shrink-0" />
                     <a
-                        href="mailto:lbpm@libertybellpm.co.uk"
+                        href="mailto:info@libertybellpm.co.uk"
                         className="text-liberty-secondary hover:text-liberty-accent transition-colors text-sm"
                     >
-                      lbpm@libertybellpm.co.uk
+                      info@libertybellpm.co.uk
                     </a>
                   </div>
                 </div>

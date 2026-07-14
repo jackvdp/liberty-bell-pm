@@ -110,7 +110,7 @@ const sections = [
 
 const dataController = {
   name: "Liberty Bell Property Management Ltd",
-  email: "lbpm@libertybellpm.co.uk",
+  email: "info@libertybellpm.co.uk",
 }
 
 export default function PrivacyPolicy() {
